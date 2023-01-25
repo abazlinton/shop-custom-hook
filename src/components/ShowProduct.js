@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Product from "./Product";
+import StyledButton from "./StyledButton";
 
 const ShowProduct = ({ getProductForId, addToBasket }) => {
   const { id } = useParams();
@@ -8,6 +9,8 @@ const ShowProduct = ({ getProductForId, addToBasket }) => {
     <>
       <h3>{product.brand}</h3>
       <Product product={product} addToBasket={addToBasket} />
+      <StyledButton onClick={() => addToBasket(product.id)}>Add To Basket</StyledButton>
+
     </>
   );
 };

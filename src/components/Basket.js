@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Product from "./Product";
+import StyledButton from "./StyledButton";
 
 const Basketlist = styled.div`
   width: 80%;
@@ -9,14 +10,6 @@ const Basketlist = styled.div`
   background-color: lightgrey;
   color: black;
   box-shadow: 4px 4px 4px 4px grey;
-`;
-
-const Button = styled.button`
-  background-color: white;
-  color: black;
-  margin: 5px;
-  border: 2px solid grey;
-  border-radius: 8px;
 `;
 
 const Basket = ({ items, removeFromBasket }) => {
@@ -32,7 +25,7 @@ const Basket = ({ items, removeFromBasket }) => {
           <Product product={item.product} />
           <h3>Quantity: {item.quantity}</h3>
         </span>
-        <Button onClick={() => removeItem(item.product.id)}>Remove one</Button>
+        <StyledButton onClick={() => removeItem(item.product.id)}>Remove one</StyledButton>
       </li>
     );
   });
